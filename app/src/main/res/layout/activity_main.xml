@@ -8,7 +8,7 @@
     <LinearLayout
         android:id="@+id/main_vertical"
         style="@style/Linear"
-        android:padding="8dp">
+        android:padding="@dimen/padding_left">
 
         <LinearLayout
             android:id="@+id/intro"
@@ -121,17 +121,17 @@
             <TextView
                 android:id="@+id/question_3"
                 style="@style/questiontext"
-                android:text="@string/third_q"
-                android:layout_marginBottom="@dimen/triple_margin"/>
+                android:layout_marginBottom="@dimen/triple_margin"
+                android:text="@string/third_q" />
 
             <EditText
                 android:id="@+id/answer_3"
+                style="@style/Edit_text"
                 android:backgroundTint="@color/textcolor"
-                android:textColorHint="@color/textcolor"
-                android:textCursorDrawable="@color/textcolor"
                 android:hint="@string/q3_hint"
                 android:maxLines="1"
-                style="@style/Edit_text"/>
+                android:textColorHint="@color/textcolor"
+                android:textCursorDrawable="@color/textcolor" />
 
             <View style="@style/viewLine" />
 
@@ -196,17 +196,17 @@
             <TextView
                 android:id="@+id/question_5"
                 style="@style/questiontext"
-                android:text="@string/fifth_q"
-                android:layout_marginBottom="@dimen/triple_margin"/>
+                android:layout_marginBottom="@dimen/triple_margin"
+                android:text="@string/fifth_q" />
 
             <EditText
                 android:id="@+id/answer_5"
+                style="@style/Edit_text"
                 android:backgroundTint="@color/textcolor"
-                android:textColorHint="@color/textcolor"
-                android:textCursorDrawable="@color/textcolor"
                 android:hint="@string/q3_hint"
                 android:maxLines="1"
-                style="@style/Edit_text"/>
+                android:textColorHint="@color/textcolor"
+                android:textCursorDrawable="@color/textcolor" />
 
             <View style="@style/viewLine" />
 
@@ -240,6 +240,7 @@
                     android:id="@+id/answer_6_b"
                     style="@style/radio_buttons"
                     android:text="@string/q_6_b" />
+
                 <RadioButton
                     android:id="@+id/answer_6_c"
                     style="@style/radio_buttons"
@@ -254,6 +255,7 @@
 
             <View style="@style/viewLine" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/q7"
             style="@style/Linear"
@@ -267,8 +269,8 @@
             <TextView
                 android:id="@+id/question_7"
                 style="@style/questiontext"
-                android:text="@string/seventh_q"
-                android:layout_marginBottom="@dimen/triple_margin"/>
+                android:layout_marginBottom="@dimen/triple_margin"
+                android:text="@string/seventh_q" />
 
             <CheckBox
                 android:id="@+id/answer_7_a"
@@ -288,8 +290,8 @@
             <CheckBox
                 android:id="@+id/answer_7_d"
                 style="@style/radio_buttons"
-                android:text="@string/q_7_d"
-                android:layout_marginBottom="@dimen/triple_margin"/>
+                android:layout_marginBottom="@dimen/triple_margin"
+                android:text="@string/q_7_d" />
 
             <View style="@style/viewLine" />
         </LinearLayout>
@@ -303,15 +305,15 @@
 
             <Button
                 android:id="@+id/submit_button"
-                android:onClick="submitButton"
                 style="@style/button"
+                android:onClick="submitButton"
                 android:text="@string/submit" />
 
             <Button
                 style="@style/button"
                 android:layout_margin="@dimen/padding_top"
-                android:padding="@dimen/padding_top"
                 android:onClick="restartButton"
+                android:padding="@dimen/padding_top"
                 android:text="@string/restart" />
         </LinearLayout>
 
