@@ -115,7 +115,6 @@
         <item name="android:textSize">@dimen/solution_size</item>
         <item name="android:fontFamily">serif</item>
         <item name="android:layout_centerHorizontal">true</item>
-
     </style>
 
     <style name="Score">
