@@ -45,34 +45,34 @@ public class MainActivity extends AppCompatActivity {
 
         //first question global variables
 
-        g1group = (RadioGroup) findViewById(R.id.answer_1);
-        q1Button = (RadioButton) findViewById(R.id.answer_1_b);
+        g1group = findViewById(R.id.answer_1);
+        q1Button = findViewById(R.id.answer_1_b);
 
         //second question global variables
-        q2a = (CheckBox) findViewById(R.id.answer_2_a);
-        q2b = (CheckBox) findViewById(R.id.answer_2_b);
-        q2c = (CheckBox) findViewById(R.id.answer_2_c);
-        q2d = (CheckBox) findViewById(R.id.answer_2_d);
+        q2a = findViewById(R.id.answer_2_a);
+        q2b = findViewById(R.id.answer_2_b);
+        q2c = findViewById(R.id.answer_2_c);
+        q2d = findViewById(R.id.answer_2_d);
 
         //third question global variables
-        q3 = (EditText) findViewById(R.id.answer_3);
+        q3 = findViewById(R.id.answer_3);
 
         //fourth question global variables
-        g4group = (RadioGroup) findViewById(R.id.answer_4);
-        q4Button = (RadioButton) findViewById(R.id.answer_4_b);
+        g4group = findViewById(R.id.answer_4);
+        q4Button =  findViewById(R.id.answer_4_b);
 
         //fifth question global variables
-        q5 = (EditText) findViewById(R.id.answer_5);
+        q5 = findViewById(R.id.answer_5);
 
         //sixth question reset global variables
-        g6group = (RadioGroup) findViewById(R.id.answer_6);
-        q6button = (RadioButton) findViewById(R.id.answer_6_b);
+        g6group = findViewById(R.id.answer_6);
+        q6button = findViewById(R.id.answer_6_b);
 
         //seventh  question reset global variables
-        q7a = (CheckBox) findViewById(R.id.answer_7_a);
-        q7b = (CheckBox) findViewById(R.id.answer_7_b);
-        q7c = (CheckBox) findViewById(R.id.answer_7_c);
-        q7d = (CheckBox) findViewById(R.id.answer_7_d);
+        q7a = findViewById(R.id.answer_7_a);
+        q7b = findViewById(R.id.answer_7_b);
+        q7c = findViewById(R.id.answer_7_c);
+        q7d = findViewById(R.id.answer_7_d);
     }
 
     /**
