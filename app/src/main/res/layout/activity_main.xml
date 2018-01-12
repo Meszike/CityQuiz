@@ -63,6 +63,9 @@
                     android:text="@string/q_1_c" />
 
             </RadioGroup>
+            <TextView
+                android:id="@+id/solution2"
+                style="@style/Solution" />
 
             <View style="@style/viewLine" />
         </LinearLayout>
@@ -104,6 +107,9 @@
                 style="@style/radio_buttons"
                 android:layout_marginBottom="@dimen/triple_margin"
                 android:text="@string/q_2_d" />
+            <TextView
+                android:id="@+id/solution3"
+                style="@style/Solution" />
 
             <View style="@style/viewLine" />
         </LinearLayout>
@@ -182,6 +188,9 @@
                     android:text="@string/q_4_d" />
 
             </RadioGroup>
+            <TextView
+                android:id="@+id/solution4"
+                style="@style/Solution" />
 
             <View style="@style/viewLine" />
         </LinearLayout>
@@ -259,6 +268,9 @@
                     android:text="@string/q_6_d" />
 
             </RadioGroup>
+            <TextView
+                android:id="@+id/solution5"
+                style="@style/Solution" />
 
             <View style="@style/viewLine" />
         </LinearLayout>
@@ -300,6 +312,10 @@
                 android:layout_marginBottom="@dimen/triple_margin"
                 android:text="@string/q_7_d" />
 
+            <TextView
+                android:id="@+id/solution6"
+                style="@style/Solution" />
+
             <View style="@style/viewLine" />
         </LinearLayout>
 
@@ -322,6 +338,17 @@
                 android:onClick="restartButton"
                 android:padding="@dimen/padding_top"
                 android:text="@string/restart" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/Linear">
+
+            <TextView
+                android:id="@+id/score"
+                style="@style/Score" />
+
         </LinearLayout>
 
     </LinearLayout>

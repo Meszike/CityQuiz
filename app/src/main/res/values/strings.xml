@@ -5,6 +5,7 @@
     <string name="restart">restart</string>
     <string name="you_got">Your score is </string>
     <string name="out_of">out of 7. Press Start to restart the quiz.</string>
+    <string name="out_of2">/7</string>
     <string name="q3_hint">Type your answer here.</string>
 
 
@@ -23,6 +24,7 @@
     <string name="q_2_d">Afghanistan</string>
 
     <string name="question3">Question 3</string>
+    <string name="good_answer1">London</string>
     <string name="third_q">7/3 \nWhat is the capital city of United Kingdom?</string>
 
     <string name="question4">Question 4</string>
@@ -34,6 +36,7 @@
 
 
     <string name="question5">Question 5</string>
+    <string name="good_answer2">Copenhagen</string>
     <string name="fifth_q">7/5 \nWhat is the capital city of Denmark?</string>
 
     <string name="question6">Question 6</string>
@@ -52,4 +55,5 @@
 
     <string name="correct">Correct!</string>
     <string name="wrong_solution">Wrong! The good answer is:  </string>
+    <string name="wrong_solutions">Wrong! The good answers are:  </string>
 </resources>

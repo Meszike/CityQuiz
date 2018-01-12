@@ -20,12 +20,13 @@ public class MainActivity extends AppCompatActivity {
     RadioButton q1Button;
     RadioButton q1f1Button;
     RadioButton q1f2Button;
-
+    TextView solution2 = null;
 
     CheckBox q2a;
     CheckBox q2b;
     CheckBox q2c;
     CheckBox q2d;
+    TextView solution3 = null;
 
     EditText q3;
     TextView solution = null;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     RadioButton q4f1Button;
     RadioButton q4f2Button;
     RadioButton q4f3Button;
+    TextView solution4 = null;
 
     EditText q5;
     TextView solution1 = null;
@@ -44,11 +46,15 @@ public class MainActivity extends AppCompatActivity {
     RadioButton q6f1Button;
     RadioButton q6f2Button;
     RadioButton q6f3Button;
+    TextView solution5 = null;
 
     CheckBox q7a;
     CheckBox q7b;
     CheckBox q7c;
     CheckBox q7d;
+    TextView solution6 = null;
+
+    TextView score = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,12 +67,14 @@ public class MainActivity extends AppCompatActivity {
         q1Button = findViewById(R.id.answer_1_b);
         q1f1Button = findViewById(R.id.answer_1_a);
         q1f2Button = findViewById(R.id.answer_1_c);
+        solution2 = findViewById(R.id.solution2);
 
         //second question global variables
         q2a = findViewById(R.id.answer_2_a);
         q2b = findViewById(R.id.answer_2_b);
         q2c = findViewById(R.id.answer_2_c);
         q2d = findViewById(R.id.answer_2_d);
+        solution3 = findViewById(R.id.solution3);
 
         //third question global variables
         q3 = findViewById(R.id.answer_3);
@@ -78,23 +86,30 @@ public class MainActivity extends AppCompatActivity {
         q4f1Button = findViewById(R.id.answer_4_a);
         q4f2Button = findViewById(R.id.answer_4_c);
         q4f3Button = findViewById(R.id.answer_4_d);
+        solution4 = findViewById(R.id.solution4);
 
         //fifth question global variables
         q5 = findViewById(R.id.answer_5);
         solution1 = findViewById(R.id.solution1);
 
-        //sixth question reset global variables
+        //sixth question global variables
         g6group = findViewById(R.id.answer_6);
         q6button = findViewById(R.id.answer_6_b);
         q6f1Button = findViewById(R.id.answer_6_a);
         q6f2Button = findViewById(R.id.answer_6_c);
         q6f3Button = findViewById(R.id.answer_6_d);
+        solution5 = findViewById(R.id.solution5);
 
-        //seventh  question reset global variables
+        //seventh  question global variables
         q7a = findViewById(R.id.answer_7_a);
         q7b = findViewById(R.id.answer_7_b);
         q7c = findViewById(R.id.answer_7_c);
         q7d = findViewById(R.id.answer_7_d);
+        solution6 = findViewById(R.id.solution6);
+
+        //score global variables
+        score = findViewById(R.id.score);
+
     }
 
     /**
@@ -107,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
         q1Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
         q1f1Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
         q1f2Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
+        solution2.setText(null);
 
         //second question reset
         q2a.setChecked(false);
@@ -118,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
         q2b.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
         q2c.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
         q2d.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
+        solution3.setText(null);
 
         //third question reset
         q3.getText().clear();
@@ -129,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
         q4f1Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
         q4f2Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
         q4f3Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
+        solution4.setText(null);
 
         //fifth question reset
         q5.getText().clear();
@@ -140,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
         q6f1Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
         q6f2Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
         q6f3Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
+        solution5.setText(null);
 
         //seventh question reset
         q7a.setChecked(false);
@@ -151,6 +170,10 @@ public class MainActivity extends AppCompatActivity {
         q7b.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
         q7c.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
         q7d.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
+        solution6.setText(null);
+
+        //reset score
+        score.setText(null);
     }
 
     /**
@@ -160,6 +183,7 @@ public class MainActivity extends AppCompatActivity {
 
         String resultText = getResources().getString(R.string.you_got) + " " + getScore() + " " + getString(R.string.out_of);
         Toast.makeText(this, resultText, Toast.LENGTH_LONG).show();
+        score.setText(getString(R.string.you_got) + " " + getScore() + getString(R.string.out_of2) );
     }
 
     /**
@@ -173,11 +197,13 @@ public class MainActivity extends AppCompatActivity {
 
         if (q1Button.isChecked()) {
             q1Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorGreen));
+            solution2.setText(getString(R.string.correct));
             total += 1;
+
         } else {
             q1f1Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
             q1f2Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
-
+            solution2.setText(getString(R.string.wrong_solution) + " " + (getString(R.string.q_1_b)));
         }
 
         //check second question
@@ -186,10 +212,12 @@ public class MainActivity extends AppCompatActivity {
             total += 1;
             q2a.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorGreen));
             q2b.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorGreen));
+            solution3.setText(getString(R.string.correct));
 
         } else{
             q2c.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
             q2d.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
+            solution3.setText(getString(R.string.wrong_solutions) +" " + (getString(R.string.q_2_a))+ ", " + (getString(R.string.q_2_b)));
         }
 
         //check third question
@@ -200,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
             solution.setText(getString(R.string.correct));
 
         }else {
-            solution.setText(getString(R.string.wrong_solution) + "London " );
+            solution.setText(getString(R.string.wrong_solution) +" " + (getString(R.string.good_answer1)) );
         }
 
         //check fourth question
@@ -208,10 +236,12 @@ public class MainActivity extends AppCompatActivity {
         if (q4Button.isChecked()) {
             total += 1;
             q4Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorGreen));
+            solution4.setText(getString(R.string.correct));
                    } else {
             q4f1Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
             q4f2Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
             q4f3Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
+            solution4.setText(getString(R.string.wrong_solution) + " " + (getString(R.string.q_4_b)));
         }
 
         //check fifth question
@@ -221,7 +251,7 @@ public class MainActivity extends AppCompatActivity {
             total += 1;
             solution1.setText(getString(R.string.correct));
         }else {
-            solution1.setText(getString(R.string.wrong_solution) + "Copenhagen " );
+            solution1.setText(getString(R.string.wrong_solution) +" " +(getString(R.string.good_answer2)) );
         }
 
         //check sixth question
@@ -229,11 +259,12 @@ public class MainActivity extends AppCompatActivity {
         if (q6button.isChecked()) {
             total += 1;
             q6button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorGreen));
-
+            solution5.setText(getString(R.string.correct));
         }else {
             q6f1Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
             q6f2Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
             q6f3Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
+            solution5.setText(getString(R.string.wrong_solution) + " " + (getString(R.string.q_6_b)));
         }
 
         //check seventh question
@@ -242,10 +273,12 @@ public class MainActivity extends AppCompatActivity {
             total += 1;
             q7a.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorGreen));
             q7c.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorGreen));
+            solution6.setText(getString(R.string.correct));
         }
         else {
             q7b.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
             q7d.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
+            solution6.setText(getString(R.string.wrong_solutions) +" " + (getString(R.string.q_7_a))+ ", " + (getString(R.string.q_7_c)));
         }
         return total;
     }
