@@ -121,7 +121,7 @@
     <style name="Score">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/textcolor</item>
+        <item name="android:textColor">@color/colorRed</item>
         <item name="android:fontFamily">serif</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_centerHorizontal">true</item>
