@@ -10,67 +10,102 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
+    // all global variables
+
+    RadioGroup g1group;
+    RadioButton q1Button;
+
+    CheckBox q2a;
+    CheckBox q2b;
+    CheckBox q2c;
+    CheckBox q2d;
+
+    EditText q3;
+
+    RadioGroup g4group;
+    RadioButton q4Button;
+
+    EditText q5;
+
+    RadioGroup g6group;
+    RadioButton q6button;
+
+    CheckBox q7a;
+    CheckBox q7b;
+    CheckBox q7c;
+    CheckBox q7d;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //first question global variables
+
+        g1group = (RadioGroup) findViewById(R.id.answer_1);
+        q1Button = (RadioButton) findViewById(R.id.answer_1_b);
+
+        //second question global variables
+        q2a = (CheckBox) findViewById(R.id.answer_2_a);
+        q2b = (CheckBox) findViewById(R.id.answer_2_b);
+        q2c = (CheckBox) findViewById(R.id.answer_2_c);
+        q2d = (CheckBox) findViewById(R.id.answer_2_d);
+
+        //third question global variables
+        q3 = (EditText) findViewById(R.id.answer_3);
+
+        //fourth question global variables
+        g4group = (RadioGroup) findViewById(R.id.answer_4);
+        q4Button = (RadioButton) findViewById(R.id.answer_4_b);
+
+        //fifth question global variables
+        q5 = (EditText) findViewById(R.id.answer_5);
+
+        //sixth question reset global variables
+        g6group = (RadioGroup) findViewById(R.id.answer_6);
+        q6button = (RadioButton) findViewById(R.id.answer_6_b);
+
+        //seventh  question reset global variables
+        q7a = (CheckBox) findViewById(R.id.answer_7_a);
+        q7b = (CheckBox) findViewById(R.id.answer_7_b);
+        q7c = (CheckBox) findViewById(R.id.answer_7_c);
+        q7d = (CheckBox) findViewById(R.id.answer_7_d);
     }
 
     /**
      * pressing the button will reset all answers to defaults
      */
     public void restartButton(View view) {
-        //first question reset
 
-        RadioGroup g1group = (RadioGroup) findViewById(R.id.answer_1);
+        //first question reset
         g1group.clearCheck();
 
         //second question reset
-
-        CheckBox q2a = (CheckBox) findViewById(R.id.answer_2_a);
         q2a.setChecked(false);
-
-        CheckBox q2b = (CheckBox) findViewById(R.id.answer_2_b);
         q2b.setChecked(false);
-
-        CheckBox q2c = (CheckBox) findViewById(R.id.answer_2_c);
         q2c.setChecked(false);
-
-        CheckBox q2d = (CheckBox) findViewById(R.id.answer_2_d);
         q2d.setChecked(false);
 
         //third question reset
-
-        EditText q3 = (EditText) findViewById(R.id.answer_3);
         q3.getText().clear();
 
         //fourth question reset
-        RadioGroup g4group = (RadioGroup) findViewById(R.id.answer_4);
         g4group.clearCheck();
 
         //fifth question reset
-
-        EditText q5 = (EditText) findViewById(R.id.answer_5);
         q5.getText().clear();
 
         //sixth question reset
-
-        RadioGroup g6group = (RadioGroup) findViewById(R.id.answer_6);
         g6group.clearCheck();
 
         //seventh question reset
-
-        CheckBox q7a = (CheckBox) findViewById(R.id.answer_7_a);
         q7a.setChecked(false);
-        CheckBox q7b = (CheckBox) findViewById(R.id.answer_7_b);
         q7b.setChecked(false);
-        CheckBox q7c = (CheckBox) findViewById(R.id.answer_7_c);
         q7c.setChecked(false);
-        CheckBox q7d = (CheckBox) findViewById(R.id.answer_7_d);
         q7d.setChecked(false);
-
     }
 
     /**
@@ -91,58 +126,44 @@ public class MainActivity extends AppCompatActivity {
         int total = 0;
         //check first question
 
-        RadioButton q1Button = (RadioButton) findViewById(R.id.answer_1_b);
         if (q1Button.isChecked()) {
             total += 1;
         }
 
         //check second question
 
-        CheckBox q2a = (CheckBox) findViewById(R.id.answer_2_a);
-        CheckBox q2b = (CheckBox) findViewById(R.id.answer_2_b);
-        CheckBox q2c = (CheckBox) findViewById(R.id.answer_2_c);
-        CheckBox q2d = (CheckBox) findViewById(R.id.answer_2_d);
         if (q2a.isChecked() && q2b.isChecked() && !q2c.isChecked() && !q2d.isChecked()) {
             total += 1;
         }
 
         //check third question
 
-        TextView q3Text = (TextView) findViewById(R.id.answer_3);
-        String answer = q3Text.getText().toString().toLowerCase().trim();
+        String answer = q3.getText().toString().toLowerCase().trim();
         if (answer.equals("london")) {
             total += 1;
         }
 
         //check fourth question
 
-        RadioButton q4Button = (RadioButton) findViewById(R.id.answer_4_b);
         if (q4Button.isChecked()) {
             total += 1;
         }
 
-
         //check fifth question
 
-        TextView q5Text = (TextView) findViewById(R.id.answer_5);
-        String answer1 = q5Text.getText().toString().toLowerCase().trim();
+        String answer1 = q5.getText().toString().toLowerCase().trim();
         if (answer1.equals("copenhagen")) {
             total += 1;
         }
 
         //check sixth question
 
-        RadioButton q6button = (RadioButton) findViewById(R.id.answer_6_b);
         if (q6button.isChecked()) {
             total += 1;
         }
 
         //check seventh question
 
-        CheckBox q7a = (CheckBox) findViewById(R.id.answer_7_a);
-        CheckBox q7b = (CheckBox) findViewById(R.id.answer_7_b);
-        CheckBox q7c = (CheckBox) findViewById(R.id.answer_7_c);
-        CheckBox q7d = (CheckBox) findViewById(R.id.answer_7_d);
         if (q7a.isChecked() && !q7b.isChecked() && q7c.isChecked() && !q7d.isChecked()) {
             total += 1;
         }
