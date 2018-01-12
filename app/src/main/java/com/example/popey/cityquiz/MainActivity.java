@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
 
     RadioGroup g6group;
     RadioButton q6button;
+    RadioButton q6f1Button;
+    RadioButton q6f2Button;
+    RadioButton q6f3Button;
 
     CheckBox q7a;
     CheckBox q7b;
@@ -83,6 +86,9 @@ public class MainActivity extends AppCompatActivity {
         //sixth question reset global variables
         g6group = findViewById(R.id.answer_6);
         q6button = findViewById(R.id.answer_6_b);
+        q6f1Button = findViewById(R.id.answer_6_a);
+        q6f2Button = findViewById(R.id.answer_6_c);
+        q6f3Button = findViewById(R.id.answer_6_d);
 
         //seventh  question reset global variables
         q7a = findViewById(R.id.answer_7_a);
@@ -130,12 +136,21 @@ public class MainActivity extends AppCompatActivity {
 
         //sixth question reset
         g6group.clearCheck();
+        q6button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
+        q6f1Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
+        q6f2Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
+        q6f3Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
 
         //seventh question reset
         q7a.setChecked(false);
         q7b.setChecked(false);
         q7c.setChecked(false);
         q7d.setChecked(false);
+
+        q7a.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
+        q7b.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
+        q7c.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
+        q7d.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
     }
 
     /**
@@ -213,14 +228,25 @@ public class MainActivity extends AppCompatActivity {
 
         if (q6button.isChecked()) {
             total += 1;
+            q6button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorGreen));
+
+        }else {
+            q6f1Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
+            q6f2Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
+            q6f3Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
         }
 
         //check seventh question
 
         if (q7a.isChecked() && !q7b.isChecked() && q7c.isChecked() && !q7d.isChecked()) {
             total += 1;
+            q7a.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorGreen));
+            q7c.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorGreen));
         }
-
+        else {
+            q7b.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
+            q7d.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
+        }
         return total;
     }
 
