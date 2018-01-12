@@ -1,5 +1,6 @@
 package com.example.popey.cityquiz;
 
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
 
     RadioGroup g1group;
     RadioButton q1Button;
+    RadioButton q1f1Button;
+    RadioButton q1f2Button;
+
 
     CheckBox q2a;
     CheckBox q2b;
@@ -24,11 +28,16 @@ public class MainActivity extends AppCompatActivity {
     CheckBox q2d;
 
     EditText q3;
+    TextView solution = null;
 
     RadioGroup g4group;
     RadioButton q4Button;
+    RadioButton q4f1Button;
+    RadioButton q4f2Button;
+    RadioButton q4f3Button;
 
     EditText q5;
+    TextView solution1 = null;
 
     RadioGroup g6group;
     RadioButton q6button;
@@ -47,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
         g1group = findViewById(R.id.answer_1);
         q1Button = findViewById(R.id.answer_1_b);
+        q1f1Button = findViewById(R.id.answer_1_a);
+        q1f2Button = findViewById(R.id.answer_1_c);
 
         //second question global variables
         q2a = findViewById(R.id.answer_2_a);
@@ -56,13 +67,18 @@ public class MainActivity extends AppCompatActivity {
 
         //third question global variables
         q3 = findViewById(R.id.answer_3);
+        solution = findViewById(R.id.solution);
 
         //fourth question global variables
         g4group = findViewById(R.id.answer_4);
-        q4Button =  findViewById(R.id.answer_4_b);
+        q4Button = findViewById(R.id.answer_4_b);
+        q4f1Button = findViewById(R.id.answer_4_a);
+        q4f2Button = findViewById(R.id.answer_4_c);
+        q4f3Button = findViewById(R.id.answer_4_d);
 
         //fifth question global variables
         q5 = findViewById(R.id.answer_5);
+        solution1 = findViewById(R.id.solution1);
 
         //sixth question reset global variables
         g6group = findViewById(R.id.answer_6);
@@ -82,6 +98,9 @@ public class MainActivity extends AppCompatActivity {
 
         //first question reset
         g1group.clearCheck();
+        q1Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
+        q1f1Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
+        q1f2Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
 
         //second question reset
         q2a.setChecked(false);
@@ -89,14 +108,25 @@ public class MainActivity extends AppCompatActivity {
         q2c.setChecked(false);
         q2d.setChecked(false);
 
+        q2a.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
+        q2b.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
+        q2c.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
+        q2d.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
+
         //third question reset
         q3.getText().clear();
+        solution.setText(null);
 
         //fourth question reset
         g4group.clearCheck();
+        q4Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
+        q4f1Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
+        q4f2Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
+        q4f3Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.textcolor));
 
         //fifth question reset
         q5.getText().clear();
+        solution1.setText(null);
 
         //sixth question reset
         g6group.clearCheck();
@@ -127,13 +157,24 @@ public class MainActivity extends AppCompatActivity {
         //check first question
 
         if (q1Button.isChecked()) {
+            q1Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorGreen));
             total += 1;
+        } else {
+            q1f1Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
+            q1f2Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
+
         }
 
         //check second question
 
         if (q2a.isChecked() && q2b.isChecked() && !q2c.isChecked() && !q2d.isChecked()) {
             total += 1;
+            q2a.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorGreen));
+            q2b.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorGreen));
+
+        } else{
+            q2c.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
+            q2d.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
         }
 
         //check third question
@@ -141,12 +182,21 @@ public class MainActivity extends AppCompatActivity {
         String answer = q3.getText().toString().toLowerCase().trim();
         if (answer.equals("london")) {
             total += 1;
+            solution.setText(getString(R.string.correct));
+
+        }else {
+            solution.setText(getString(R.string.wrong_solution) + "London " );
         }
 
         //check fourth question
 
         if (q4Button.isChecked()) {
             total += 1;
+            q4Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorGreen));
+                   } else {
+            q4f1Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
+            q4f2Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
+            q4f3Button.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorRed));
         }
 
         //check fifth question
@@ -154,6 +204,9 @@ public class MainActivity extends AppCompatActivity {
         String answer1 = q5.getText().toString().toLowerCase().trim();
         if (answer1.equals("copenhagen")) {
             total += 1;
+            solution1.setText(getString(R.string.correct));
+        }else {
+            solution1.setText(getString(R.string.wrong_solution) + "Copenhagen " );
         }
 
         //check sixth question

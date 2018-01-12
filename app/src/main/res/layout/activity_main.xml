@@ -133,6 +133,10 @@
                 android:textColorHint="@color/textcolor"
                 android:textCursorDrawable="@color/textcolor" />
 
+            <TextView
+                android:id="@+id/solution"
+                style="@style/Solution" />
+
             <View style="@style/viewLine" />
 
         </LinearLayout>
@@ -207,6 +211,9 @@
                 android:maxLines="1"
                 android:textColorHint="@color/textcolor"
                 android:textCursorDrawable="@color/textcolor" />
+            <TextView
+                android:id="@+id/solution1"
+                style="@style/Solution" />
 
             <View style="@style/viewLine" />
 

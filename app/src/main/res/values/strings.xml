@@ -50,5 +50,6 @@
     <string name="q_7_c">Guyana</string>
     <string name="q_7_d">Japan</string>
 
-
+    <string name="correct">Correct!</string>
+    <string name="wrong_solution">Wrong! The good answer is:  </string>
 </resources>
