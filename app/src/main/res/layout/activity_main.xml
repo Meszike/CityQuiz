@@ -63,6 +63,7 @@
                     android:text="@string/q_1_c" />
 
             </RadioGroup>
+
             <TextView
                 android:id="@+id/solution2"
                 style="@style/Solution" />
@@ -107,6 +108,7 @@
                 style="@style/radio_buttons"
                 android:layout_marginBottom="@dimen/triple_margin"
                 android:text="@string/q_2_d" />
+
             <TextView
                 android:id="@+id/solution3"
                 style="@style/Solution" />
@@ -188,6 +190,7 @@
                     android:text="@string/q_4_d" />
 
             </RadioGroup>
+
             <TextView
                 android:id="@+id/solution4"
                 style="@style/Solution" />
@@ -220,6 +223,7 @@
                 android:maxLines="1"
                 android:textColorHint="@color/textcolor"
                 android:textCursorDrawable="@color/textcolor" />
+
             <TextView
                 android:id="@+id/solution1"
                 style="@style/Solution" />
@@ -268,6 +272,7 @@
                     android:text="@string/q_6_d" />
 
             </RadioGroup>
+
             <TextView
                 android:id="@+id/solution5"
                 style="@style/Solution" />
@@ -321,10 +326,7 @@
 
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="fill_horizontal"
-            android:orientation="horizontal">
+           style="@style/LinearLayout">
 
             <Button
                 android:id="@+id/submit_button"
@@ -339,11 +341,9 @@
                 android:padding="@dimen/padding_top"
                 android:text="@string/restart" />
 
-
         </LinearLayout>
 
-        <LinearLayout
-            style="@style/Linear">
+        <LinearLayout style="@style/Linear">
 
             <TextView
                 android:id="@+id/score"
