@@ -21,7 +21,7 @@
 
             <TextView
                 android:id="@+id/explain_text"
-                style="@style/questiontext"
+                style="@style/questionText"
                 android:text="@string/welcome_message" />
 
             <View style="@style/viewLine" />
@@ -40,7 +40,7 @@
 
             <TextView
                 android:id="@+id/question_1"
-                style="@style/questiontext"
+                style="@style/questionText"
                 android:text="@string/first_q" />
 
             <RadioGroup
@@ -83,7 +83,7 @@
 
             <TextView
                 android:id="@+id/question_2"
-                style="@style/questiontext"
+                style="@style/questionText"
                 android:layout_marginBottom="@dimen/triple_margin"
                 android:text="@string/second_q" />
 
@@ -126,7 +126,7 @@
 
             <TextView
                 android:id="@+id/question_3"
-                style="@style/questiontext"
+                style="@style/questionText"
                 android:layout_marginBottom="@dimen/triple_margin"
                 android:text="@string/third_q" />
 
@@ -160,7 +160,7 @@
 
             <TextView
                 android:id="@+id/question_4"
-                style="@style/questiontext"
+                style="@style/questionText"
                 android:text="@string/fourth_q" />
 
             <RadioGroup
@@ -208,7 +208,7 @@
 
             <TextView
                 android:id="@+id/question_5"
-                style="@style/questiontext"
+                style="@style/questionText"
                 android:layout_marginBottom="@dimen/triple_margin"
                 android:text="@string/fifth_q" />
 
@@ -240,7 +240,7 @@
 
             <TextView
                 android:id="@+id/question_6"
-                style="@style/questiontext"
+                style="@style/questionText"
                 android:text="@string/sixth_q" />
 
             <RadioGroup
@@ -287,7 +287,7 @@
 
             <TextView
                 android:id="@+id/question_7"
-                style="@style/questiontext"
+                style="@style/questionText"
                 android:layout_marginBottom="@dimen/triple_margin"
                 android:text="@string/seventh_q" />
 

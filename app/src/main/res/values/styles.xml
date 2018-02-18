@@ -28,7 +28,7 @@
         <item name="android:scaleType">fitCenter</item>
     </style>
 
-    <style name="questiontext">
+    <style name="questionText">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textIsSelectable">false</item>
@@ -126,6 +126,15 @@
         <item name="android:layout_centerHorizontal">true</item>
         <item name="android:textSize">@dimen/result_size</item>
         <item name="android:layout_marginTop">@dimen/margin_top</item>
+    </style>
+
+
+    <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
+        <item name="android:layout">@layout/abc_select_dialog_material</item>
+        <item name="listLayout">@layout/abc_select_dialog_material</item>
+        <item name="listItemLayout">@layout/select_dialog_item_material</item>
+        <item name="multiChoiceItemLayout">@layout/select_dialog_multichoice_material</item>
+        <item name="singleChoiceItemLayout">@layout/select_dialog_singlechoice_material</item>
     </style>
 
 </resources>
